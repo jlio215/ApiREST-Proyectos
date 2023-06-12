@@ -26,7 +26,7 @@ pipeline {
                     ]) {
                         sh """
                             sed 's|\\${MONGO_URI}|${MONGO_URI}|g' Docker-compose.yml > docker-compose-update.yml
-                            Docker-compose -f docker-compose-update.yml up -d
+                            Docker-compose.yml -f docker-compose-update.yml up -d
                         """
                     }
                 }
