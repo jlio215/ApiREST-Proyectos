@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clonar el Repositorio'){
             steps {
-                git branch: 'main', credentialsId: 'git-jenkins', url: 'https://github.com/jlio215/ApisRESTNodeJs/tree/main/ApiREST-Proyectos'
+                git branch: 'main', credentialsId: 'git-jenkins', url: 'https://github.com/jlio215/ApiREST-Proyectos.git'
             }
         }
         stage('Construir imagen de Docker'){
