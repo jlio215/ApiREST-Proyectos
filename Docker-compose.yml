@@ -6,8 +6,7 @@ services:
     build:
       context: .
     ports:
-      - "3002:3002"
-      - "3003:3002"
+      - "3002"
     environment:
       - MONGO_URI=${MONGO_URI}
       - PORT=4002
