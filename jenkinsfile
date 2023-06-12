@@ -16,7 +16,7 @@ pipeline {
                         docker.build('apirest-proyecto:v1', '--build-arg MONGO_URI=${MONGO_URI} .')
                     }
                 }
-            }
+            } 
         }
         stage('Desplegar contenedores Docker'){
             steps {
