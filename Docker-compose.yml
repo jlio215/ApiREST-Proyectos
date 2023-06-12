@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+  apirest-proyecto:
+    container_name: apirest-proyecto
+    image: apirest-proyecto:latest
+    build:
+      context: .
+    ports:
+      - "3002:3002"
+      - "3003:3002"
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      - PORT=4002
+    networks:
+      
+  balanceador-carga:
+    container_name: balanceador-carga
+    image: balanceador-carga:v1
+    build:
+      context: ./balanceador
+    ports:
+      - "3004:80"
+    networks:
+      - proyectos-app
+networks:
+  proyectos-app:
