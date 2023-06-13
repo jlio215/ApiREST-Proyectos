@@ -25,8 +25,8 @@ pipeline {
                             string(credentialsId: 'MONGO_URI', variable: 'MONGO_URI')
                     ]) {
                         sh """
-                            sed 's|\\${MONGO_URI}|${MONGO_URI}|g' Docker-compose.yml > Docker-compose-update.yml
-                            Docker-compose -f Docker-compose-update.yml up -d
+                            sed 's|\\${MONGO_URI}|${MONGO_URI}|g'
+                            Docker-compose -f Docker-compose.yml up -d
                         """
                     }
                 }
